@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+    background-color: #fff8f4;
+    color: #241a0e;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer components {
+  /* ===== Dégradés or (Accueil & Réservation, thème doré) ===== */
+  .gold-gradient-btn {
+    background: linear-gradient(135deg, #c59a45 0%, #a67923 100%);
+  }
+  .gold-gradient-soft {
+    background: linear-gradient(135deg, #ffdea6 0%, #f3bd70 100%);
+  }
+  .gold-border {
+    border-color: #d4af37;
+  }
+
+  /* ===== Material Symbols (icônes Google) ===== */
+  .material-symbols-outlined {
+    font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  /* ===== Masquer scrollbars comme dans les prototypes Stitch ===== */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .custom-scroll::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* ===== Badges de statut (Espace collaborateurs) ===== */
+  .badge-status-new {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+  }
+  .badge-status-progress {
+    background-color: #e0e7ff;
+    color: #3730a3;
+    border: 1px solid #c7d2fe;
+  }
+  .badge-status-ready {
+    background-color: #dcfce7;
+    color: #166534;
+    border: 1px solid #86efac;
+  }
+
+  /* ===== Glow de l'onglet actif (Espace collaborateurs) ===== */
+  .active-tab-glow {
+    box-shadow: 0 4px 14px rgba(197, 154, 69, 0.25);
+  }
+
+  /* ===== Toasts ===== */
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(-0.75rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .toast-in {
+    animation: toast-in 0.3s ease forwards;
+  }
+
+  /* ===== Tokens typographiques — thème doré (Accueil, Galerie, Réservation) ===== */
+  .jc-headline-sm {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 600;
+  }
+  .jc-headline-md {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+  }
+  .jc-headline-lg-mobile {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 600;
+  }
+  .jc-label-sm {
+    font-size: 11px;
+    line-height: 14px;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+  }
+  .jc-label-md {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .jc-label-lg {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.03em;
+    font-weight: 600;
+  }
+  .jc-body-sm {
+    font-size: 13px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+  .jc-body-md {
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  /* ===== Tokens typographiques — thème rosé (Configurateur gâteau) ===== */
+  .fd-headline-sm {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+  .fd-headline-md {
+    font-family: 'Outfit', sans-serif;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 600;
+  }
+  .fd-headline-lg-mobile {
+    font-family: 'Outfit', sans-serif;
+    font-size: 26px;
+    line-height: 34px;
+    font-weight: 600;
+  }
+  .fd-display-lg-mobile {
+    font-family: 'Outfit', sans-serif;
+    font-size: 34px;
+    line-height: 42px;
+    font-weight: 700;
+  }
+  .fd-label-sm {
+    font-size: 11px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+  .fd-label-md {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 600;
+  }
+  .fd-label-lg {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+  }
+  .fd-body-sm {
+    font-size: 13px;
+    line-height: 19px;
+    font-weight: 400;
+  }
+  .fd-body-md {
+    font-size: 15px;
+    line-height: 23px;
+    font-weight: 400;
+  }
+}
+
+@layer utilities {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+}
+
+/* Police par défaut = Plus Jakarta Sans (tok. body des prototypes Stitch) */
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .font-serif {
+    font-family: 'Playfair Display', serif;
+  }
+}
