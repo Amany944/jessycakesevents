@@ -26,3 +26,6 @@ dist-ssr/
 *.njsproj
 *.sln
 *.sw?
+
+# Netlify CLI (etat local du site lie)
+.netlify/
