@@ -56,9 +56,9 @@ export default function BookingPage() {
   return (
     <div className="bg-[#fff8f4] text-[#241a0e] flex flex-col min-h-screen">
       {/* ================= HEADER ================= */}
-      <header className="fixed top-0 w-full z-50 pt-safe bg-[#fff8f4]/90 backdrop-blur-xl shadow-[0_1px_10px_rgba(123,88,2,0.06)] border-b border-[#fae5d1]/60">
+      <header className="lg:hidden fixed top-0 w-full z-50 pt-safe bg-[#fff8f4]/90 backdrop-blur-xl shadow-[0_1px_10px_rgba(123,88,2,0.06)] border-b border-[#fae5d1]/60">
         <div className="h-16 px-[1.25rem] flex items-center justify-between gap-2">
-          <div className="flex items-center gap-2 min-w-0">
+          <div className="flex items-center min-w-0 gap-2">
             <img
               alt="Jessy Cakes Events Brazzaville"
               className="h-11 w-11 object-contain rounded-full border border-[#c59a45]/40 p-0.5 shadow-sm bg-white"
@@ -102,13 +102,13 @@ export default function BookingPage() {
         </div>
       </header>
 
-      <main className="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-[#fff8f4]">
+      <main className="flex-1 flex flex-col relative w-full pt-16 pb-28 lg:pb-12 lg:max-w-3xl lg:mx-auto bg-[#fff8f4]">
         {/* ---------- HERO ---------- */}
         <div className="relative w-full overflow-hidden bg-[#fff1e6] px-[1.25rem] pt-4 pb-6 border-b border-[#fae5d1]/50">
           <div className="relative z-10 flex flex-col gap-1">
             <div className="inline-flex items-center gap-1 self-start px-3 py-1 rounded-full bg-[#ffdea6]/60 text-[#5d4200] border border-[#c59a45]/30">
               <span className="material-symbols-outlined text-[15px] text-[#7b5802]">verified</span>
-              <span className="jc-label-sm tracking-wide">
+              <span className="tracking-wide jc-label-sm">
                 Artisans de l'Événementiel • Brazzaville
               </span>
             </div>
@@ -122,7 +122,7 @@ export default function BookingPage() {
           </div>
           <div className="mt-4 relative rounded-lg overflow-hidden shadow-md border border-[#d2c5b2]/30">
             <img
-              className="w-full h-44 object-cover"
+              className="object-cover w-full h-44"
               data-alt="A joyful bride and groom laughing together during an evening wedding reception"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGpm-0ApA3J6WLVl7HC2cPy8_on-hPk-HsejVzF1GTvii27xWqOmCsOF63lPAvZ_8lU7Swkyh1kDiB66pcUZsIL8D5XfcMtbbVL1cCHZgvu30frkHx5TPhvywNL-jkIVv18fACENcqM4YO42PfNxOyHLo6jtynxi_7Z9vqFWGJHw8-PRJwaDFT1zJyYprzMrUI__jyAowsDKFtTqAPKU_ATOMAlEfydYWQp4meWsk0N5krzXWdNQ"
             />
@@ -227,7 +227,7 @@ export default function BookingPage() {
                       <span className="material-symbols-outlined text-[24px]">{sv.icon}</span>
                     </div>
                     <div className="flex-1 min-w-0 pr-2">
-                      <div className="flex items-center justify-between flex-wrap gap-1">
+                      <div className="flex flex-wrap items-center justify-between gap-1">
                         <span className="jc-label-lg text-[#241a0e] font-bold">{sv.name}</span>
                         <span className="jc-label-sm text-[12px] font-bold text-[#7b5802] px-2 py-0.5 rounded-md bg-[#ffead8]">
                           Dès {sv.price.toLocaleString('fr-FR')} FCFA
@@ -235,7 +235,7 @@ export default function BookingPage() {
                       </div>
                       <p className="jc-body-sm text-[#4e4637] mt-1 leading-snug">{sv.desc}</p>
                     </div>
-                    <div className="shrink-0 flex items-center justify-center self-center pl-1">
+                    <div className="flex items-center self-center justify-center pl-1 shrink-0">
                       <span
                         className={`material-symbols-outlined text-[26px] ${
                           checked ? 'text-[#7b5802]' : 'text-[#f4dfcc]'
@@ -296,8 +296,9 @@ export default function BookingPage() {
                   </span>
                   Heure de début / Créneau horaire *
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-1">
+                <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
                   <div className="relative">
+                    <p className="text-[#4e4637] text-[12px] mb-0.5">Heure exacte de début </p>
                     <input
                       className="w-full h-12 px-4 rounded-[0.75rem] bg-[#ffead8] text-[#241a0e] text-[15px] leading-[24px] border border-[#d2c5b2]/40 focus:outline-none focus:ring-2 focus:ring-[#7b5802] focus:border-[#7b5802] transition-all"
                       id="event-time-input"
@@ -308,6 +309,7 @@ export default function BookingPage() {
                     />
                   </div>
                   <div className="grid grid-cols-3 gap-1" role="radiogroup">
+                    <p className="text-[#4e4637] text-[12px] mb-0.5 col-span-3"> Veillez cliquez sur l'un pour indiquer le moment de la journée</p>
                     {TIME_SLOTS.map((ts) => {
                       const active = slot === ts.value
                       return (
@@ -427,19 +429,19 @@ export default function BookingPage() {
                 </span>
               </div>
               <div className="flex flex-col gap-1 py-1 border-y border-[#d2c5b2]/30">
-                <div className="flex justify-between items-start gap-2">
+                <div className="flex items-start justify-between gap-2">
                   <span className="text-[#4e4637] text-[13px]">Événement(s) :</span>
                   <span className="jc-label-md text-[#241a0e] font-semibold text-right">
                     {recapEvents}
                   </span>
                 </div>
-                <div className="flex justify-between items-start gap-2">
+                <div className="flex items-start justify-between gap-2">
                   <span className="text-[#4e4637] text-[13px]">Prestation(s) :</span>
                   <span className="jc-label-md text-[#241a0e] font-semibold text-right">
                     {recapServices}
                   </span>
                 </div>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <span className="text-[#4e4637] text-[13px]">Lieu &amp; Date :</span>
                   <span className="jc-label-md text-[#241a0e] text-right">{recapDateTime}</span>
                 </div>
@@ -461,7 +463,7 @@ export default function BookingPage() {
 
             <div className="flex flex-col gap-1 mt-2">
               <button
-                className="w-full h-14 rounded-full bg-[#7b5802] text-white jc-label-lg shadow-lg hover:bg-[#c59a45] active:scale-[0.98] transition-all flex items-center justify-center gap-1 cursor-pointer border border-[#ffdea6]/40"
+                className="w-full h-14 lg:h-12 rounded-full bg-[#7b5802] text-white jc-label-lg shadow-lg hover:bg-[#c59a45] active:scale-[0.98] transition-all flex items-center justify-center gap-1 cursor-pointer border border-[#ffdea6]/40"
                 id="btn-submit-booking"
                 type="submit"
               >
@@ -486,7 +488,7 @@ export default function BookingPage() {
             POURQUOI CHOISIR JESSY CAKES EVENTS BRAZZAVILLE ?
           </span>
           <div className="grid grid-cols-2 gap-2">
-            <div className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px]">
+            <div className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px] lg:min-h-[44px]">
               <span className="material-symbols-outlined text-[#7b5802] text-[20px] shrink-0">
                 payments
               </span>
@@ -495,7 +497,7 @@ export default function BookingPage() {
               </span>
             </div>
             <a
-              className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px] hover:border-[#7b5802] transition-colors"
+              className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px] lg:min-h-[44px] hover:border-[#7b5802] transition-colors"
               href="https://wa.me/242069499512"
               rel="noopener"
               target="_blank"
@@ -507,7 +509,7 @@ export default function BookingPage() {
                 Assistance WhatsApp 06 949 95 12
               </span>
             </a>
-            <div className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px]">
+            <div className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px] lg:min-h-[44px]">
               <span className="material-symbols-outlined text-[#7b5802] text-[20px] shrink-0">
                 verified
               </span>
@@ -515,7 +517,7 @@ export default function BookingPage() {
                 Qualité Haute Définition &amp; Saveurs
               </span>
             </div>
-            <div className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px]">
+            <div className="p-2 rounded-[0.75rem] bg-[#ffead8] flex items-center gap-1 border border-[#d2c5b2]/20 min-h-[48px] lg:min-h-[44px]">
               <span className="material-symbols-outlined text-[#7b5802] text-[20px] shrink-0">
                 local_shipping
               </span>
@@ -527,14 +529,14 @@ export default function BookingPage() {
         </section>
 
         {/* ---------- FAB ---------- */}
-        <aside className="fixed bottom-20 right-[1.25rem] z-40">
+        <aside className="fixed bottom-20 lg:bottom-6 right-[1.25rem] z-40">
           <button
             className="inline-flex items-center gap-1 px-4 py-2.5 rounded-full bg-[#7b5802] text-white shadow-[0_8px_24px_-4px_rgba(123,88,2,0.35)] hover:bg-[#c59a45] transition-all active:scale-95 border border-[#ffdea6]/40 cursor-pointer"
             onClick={() => setShowHelp(true)}
             type="button"
           >
             <span className="material-symbols-outlined text-[20px]">support_agent</span>
-            <span className="jc-label-md tracking-wide font-semibold">Besoin d'aide ?</span>
+            <span className="font-semibold tracking-wide jc-label-md">Besoin d'aide ?</span>
           </button>
         </aside>
 
@@ -542,8 +544,8 @@ export default function BookingPage() {
         {showConfirm && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-[1.25rem] bg-[#241a0e]/50 backdrop-blur-sm">
             <div className="w-full max-w-sm bg-[#fff8f4] rounded-xl p-6 shadow-2xl flex flex-col items-center text-center gap-4 border border-[#c59a45]/30">
-              <div className="w-16 h-16 rounded-full bg-[#ffdea6] flex items-center justify-center text-[#5d4200] shadow-sm">
-                <span className="material-symbols-outlined text-[36px] text-[#7b5802]">
+              <div className="w-16 h-16 lg:w-14 lg:h-14 rounded-full bg-[#ffdea6] flex items-center justify-center text-[#5d4200] shadow-sm">
+                <span className="material-symbols-outlined text-[36px] lg:text-[30px] text-[#7b5802]">
                   mark_email_read
                 </span>
               </div>
@@ -580,7 +582,7 @@ export default function BookingPage() {
         {/* ---------- MODALE AIDE ---------- */}
         {showHelp && (
           <div
-            className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center"
+            className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm sm:items-center"
             onClick={(e) => {
               if (e.target === e.currentTarget) setShowHelp(false)
             }}

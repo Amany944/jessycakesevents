@@ -8,9 +8,9 @@ const OCCASIONS = [
 ]
 
 const GUESTS = [
-  { count: 5, price: 45, label: '5 pers.', sub: '~9€ / convive', priceClass: 'text-[#964637]' },
-  { count: 10, price: 75, label: '10 pers.', sub: 'Format idéal famille', priceClass: 'text-[#964637]' },
-  { count: 20, price: 130, label: '20 pers.', sub: 'Parfait pour grande fête', priceClass: 'text-[#964637]' },
+  { count: 5, price: 30000, label: '5 pers.', sub: '~6 000 FCFA / convive', priceClass: 'text-[#964637]' },
+  { count: 10, price: 50000, label: '10 pers.', sub: 'Format idéal famille', priceClass: 'text-[#964637]' },
+  { count: 20, price: 85000, label: '20 pers.', sub: 'Parfait pour grande fête', priceClass: 'text-[#964637]' },
   { count: 35, price: 195, label: '30+ pers.', sub: 'Grands événements', priceClass: 'text-[#7e5713]', surDevis: true },
 ]
 
@@ -103,7 +103,7 @@ export default function CakePage() {
   return (
     <div className="bg-[#fdf9f3] text-[#1c1c18] flex flex-col min-h-screen">
       {/* ================= HEADER ================= */}
-      <header className="fixed top-0 w-full z-50 pt-safe bg-[#fdf9f3]/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(61,39,32,0.04)]">
+      <header className="lg:hidden fixed top-0 w-full z-50 pt-safe bg-[#fdf9f3]/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(61,39,32,0.04)]">
         <div className="h-16 px-[1.25rem] flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 min-w-0">
             <img
@@ -142,7 +142,7 @@ export default function CakePage() {
         </div>
       </header>
 
-      <main className="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-[#fdf9f3]">
+      <main className="flex-1 flex flex-col relative w-full pt-16 pb-28 lg:pb-12 lg:max-w-3xl lg:mx-auto bg-[#fdf9f3]">
         {/* ---------- EN-TÊTE + PROGRESSION ---------- */}
         <section className="px-[1.25rem] pt-4 pb-1">
           <div className="flex items-center justify-between gap-2 mb-2">
@@ -154,7 +154,7 @@ export default function CakePage() {
                 Composez votre gâteau de rêve 🎂
               </h1>
             </div>
-            <div className="w-12 h-12 rounded-full bg-[#ffdad3] flex items-center justify-center text-[#964637] shrink-0 shadow-sm">
+            <div className="w-12 h-12 lg:w-10 lg:h-10 rounded-full bg-[#ffdad3] flex items-center justify-center text-[#964637] shrink-0 shadow-sm">
               <span className="material-symbols-outlined text-[24px]">cake</span>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function CakePage() {
                   {occasion} • {guests.count} pers. • {shape.split(' ')[0]}
                 </p>
                 <p className="fd-headline-sm text-[#964637]">
-                  {price === null ? 'Sur devis' : `${price} €`}
+                  {price === null ? 'Sur devis' : `${price.toLocaleString('fr-FR')} FCFA`}
                 </p>
               </div>
             </div>
@@ -312,7 +312,7 @@ export default function CakePage() {
                       >
                         <span className="fd-headline-sm text-[#1c1c18] block">{g.label}</span>
                         <span className={`fd-headline-md font-bold block mt-1 ${g.priceClass}`}>
-                          {g.surDevis ? 'Sur devis' : `${g.price} €`}
+                          {g.surDevis ? 'Sur devis' : `${g.price.toLocaleString('fr-FR')} FCFA`}
                         </span>
                         <span className="fd-label-sm text-[#55433f] block mt-1">{g.sub}</span>
                         <div
@@ -332,7 +332,7 @@ export default function CakePage() {
 
               <div className="pt-1">
                 <button
-                  className="w-full h-14 rounded-full bg-[#964637] text-white fd-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-[#d87a68] active:scale-[0.98] transition-all"
+                  className="w-full lg:h-12 rounded-full bg-[#964637] text-white fd-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-[#d87a68] active:scale-[0.98] transition-all"
                   onClick={() => goToStep(2)}
                   type="button"
                 >
@@ -367,7 +367,7 @@ export default function CakePage() {
                         type="button"
                       >
                         <div
-                          className={`w-14 h-14 ${s.rounded} ${s.box} shadow-sm flex items-center justify-center`}
+                          className={`w-14 h-14 lg:w-12 lg:h-12 ${s.rounded} ${s.box} shadow-sm flex items-center justify-center`}
                         >
                           <span className="material-symbols-outlined text-[30px]">{s.icon}</span>
                         </div>
@@ -440,7 +440,7 @@ export default function CakePage() {
 
               <div className="flex items-center gap-2 pt-1">
                 <button
-                  className="w-1/3 h-14 rounded-full bg-[#e6e2dc] text-[#1c1c18] fd-label-lg flex items-center justify-center gap-1 active:scale-[0.98]"
+                  className="w-1/3 lg:h-12 rounded-full bg-[#e6e2dc] text-[#1c1c18] fd-label-lg flex items-center justify-center gap-1 active:scale-[0.98]"
                   onClick={() => goToStep(1)}
                   type="button"
                 >
@@ -448,7 +448,7 @@ export default function CakePage() {
                   <span>Retour</span>
                 </button>
                 <button
-                  className="flex-1 h-14 rounded-full bg-[#964637] text-white fd-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-[#d87a68] active:scale-[0.98]"
+                  className="flex-1 lg:h-12 rounded-full bg-[#964637] text-white fd-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-[#d87a68] active:scale-[0.98]"
                   onClick={() => goToStep(3)}
                   type="button"
                 >
@@ -504,7 +504,7 @@ export default function CakePage() {
                 </p>
                 <div className="relative">
                   <input
-                    className="w-full h-14 px-4 pr-12 rounded-lg bg-white text-[#1c1c18] text-[15px] leading-[23px] focus:outline-none shadow-sm"
+                    className="w-full lg:h-12 px-4 pr-12 rounded-lg bg-white text-[#1c1c18] text-[15px] leading-[23px] focus:outline-none shadow-sm"
                     id="cake-inscription"
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Ex: Joyeux Anniversaire Lucas (8 ans)"
@@ -526,7 +526,7 @@ export default function CakePage() {
                 </p>
                 <div className="relative">
                   <input
-                    className="w-full h-14 px-4 pr-12 rounded-lg bg-white text-[#1c1c18] fd-label-lg focus:outline-none shadow-sm"
+                    className="w-full lg:h-12 px-4 pr-12 rounded-lg bg-white text-[#1c1c18] fd-label-lg focus:outline-none shadow-sm"
                     id="cake-date"
                     onChange={(e) => setDate(e.target.value)}
                     type="date"
@@ -568,7 +568,7 @@ export default function CakePage() {
                     }}
                     type="file"
                   />
-                  <div className="w-14 h-14 rounded-full bg-[#ffddb1] flex items-center justify-center text-[#7e5713] shadow-sm">
+                  <div className="w-14 lg:w-12 lg:h-12 rounded-full bg-[#ffddb1] flex items-center justify-center text-[#7e5713] shadow-sm">
                     <span className="material-symbols-outlined text-[28px]">add_a_photo</span>
                   </div>
                   <div className="flex flex-col">
@@ -586,7 +586,7 @@ export default function CakePage() {
 
               <div className="flex items-center gap-2 pt-1">
                 <button
-                  className="w-1/3 h-14 rounded-full bg-[#e6e2dc] text-[#1c1c18] fd-label-lg flex items-center justify-center gap-1 active:scale-[0.98]"
+                  className="w-1/3 lg:h-12 rounded-full bg-[#e6e2dc] text-[#1c1c18] fd-label-lg flex items-center justify-center gap-1 active:scale-[0.98]"
                   onClick={() => goToStep(2)}
                   type="button"
                 >
@@ -594,7 +594,7 @@ export default function CakePage() {
                   <span>Retour</span>
                 </button>
                 <button
-                  className="flex-1 h-14 rounded-full bg-[#964637] text-white fd-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-[#d87a68] active:scale-[0.98]"
+                  className="flex-1 lg:h-12 rounded-full bg-[#964637] text-white fd-label-lg flex items-center justify-center gap-2 shadow-md hover:bg-[#d87a68] active:scale-[0.98]"
                   onClick={() => goToStep(4)}
                   type="button"
                 >
@@ -712,7 +712,7 @@ export default function CakePage() {
                     </span>
                   </div>
                   <span className="fd-display-lg-mobile text-[#964637] font-bold">
-                    {price === null ? 'Sur devis' : `${price} €`}
+                    {price === null ? 'Sur devis' : `${price.toLocaleString('fr-FR')} FCFA`}
                   </span>
                 </div>
               </div>
@@ -737,7 +737,7 @@ export default function CakePage() {
                   Votre numéro de téléphone pour validation
                 </label>
                 <input
-                  className="w-full h-14 px-4 rounded-lg bg-white text-[#1c1c18] text-[15px] leading-[23px] focus:outline-none shadow-sm"
+                  className="w-full lg:h-12 px-4 rounded-lg bg-white text-[#1c1c18] text-[15px] leading-[23px] focus:outline-none shadow-sm"
                   id="client-tel"
                   placeholder="06 12 34 56 78"
                   type="tel"
@@ -745,7 +745,7 @@ export default function CakePage() {
               </div>
 
               <button
-                className="w-full h-16 rounded-full bg-[#964637] text-white fd-headline-sm flex items-center justify-center gap-2 shadow-xl hover:bg-[#d87a68] active:scale-[0.98] transition-all"
+                className="w-full lg:h-14 h-16 rounded-full bg-[#964637] text-white fd-headline-sm flex items-center justify-center gap-2 shadow-xl hover:bg-[#d87a68] active:scale-[0.98] transition-all"
                 onClick={() => setShowSuccess(true)}
                 type="button"
               >
@@ -759,7 +759,7 @@ export default function CakePage() {
         </form>
 
         {/* ---------- FAB ---------- */}
-        <aside className="fixed bottom-24 right-[1.25rem] z-40">
+        <aside className="fixed bottom-24 lg:bottom-6 right-[1.25rem] z-40">
           <a
             className="inline-flex items-center gap-1 px-4 py-2.5 rounded-full bg-[#506353] text-white shadow-[0_8px_24px_-4px_rgba(61,39,32,0.18)] hover:bg-[#859987] transition-all active:scale-95"
             href="https://wa.me/?text=Bonjour,%20j'ai%20besoin%20d'aide"
@@ -775,8 +775,8 @@ export default function CakePage() {
         {showSuccess && (
           <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end justify-center px-[1.25rem]">
             <div className="w-full max-w-md bg-white rounded-t-xl rounded-b-lg p-10 shadow-2xl flex flex-col items-center text-center gap-4">
-              <div className="w-20 h-20 rounded-full bg-[#d3e8d3] flex items-center justify-center text-[#506353] shadow-sm">
-                <span className="material-symbols-outlined text-[44px]">cake</span>
+              <div className="w-20 h-20 lg:w-16 lg:h-16 rounded-full bg-[#d3e8d3] flex items-center justify-center text-[#506353] shadow-sm">
+                <span className="material-symbols-outlined lg:text-[36px] text-[44px]">cake</span>
               </div>
               <div className="flex flex-col gap-1">
                 <span className="fd-headline-lg-mobile text-[#1c1c18]">Commande Reçue !</span>
@@ -793,7 +793,7 @@ export default function CakePage() {
                 </span>
               </div>
               <button
-                className="w-full h-14 rounded-full bg-[#964637] text-white fd-label-lg shadow-md hover:bg-[#d87a68]"
+                className="w-full lg:h-12 rounded-full bg-[#964637] text-white fd-label-lg shadow-md hover:bg-[#d87a68]"
                 onClick={() => {
                   setShowSuccess(false)
                   goToStep(1)

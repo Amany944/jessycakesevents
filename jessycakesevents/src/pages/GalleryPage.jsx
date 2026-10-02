@@ -120,7 +120,7 @@ export default function GalleryPage() {
   return (
     <div className="bg-[#fff8f4] text-[#241a0e] flex flex-col min-h-screen">
       {/* ================= HEADER ================= */}
-      <header className="fixed top-0 w-full z-50 bg-[#fff8f4]/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(42,31,19,0.06)] pt-safe">
+      <header className="lg:hidden fixed top-0 w-full z-50 bg-[#fff8f4]/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(42,31,19,0.06)] pt-safe">
         <div className="h-16 px-[0.875rem] flex items-center justify-between gap-2">
           <div className="flex items-center gap-2 min-w-0">
             <div className="w-10 h-10 rounded-full overflow-hidden shrink-0 shadow-[0_2px_8px_rgba(197,154,69,0.2)] bg-[#ffead8]">
@@ -165,7 +165,7 @@ export default function GalleryPage() {
         </div>
       </header>
 
-      <main className="flex flex-col relative w-full pt-16 pb-24 bg-[#fff8f4] min-h-screen">
+      <main className="flex flex-col relative w-full pt-16 pb-24 lg:pb-12 lg:max-w-6xl lg:mx-auto bg-[#fff8f4] min-h-screen">
         {/* ---------- HERO GALERIE ---------- */}
         <section className="px-4 pt-2 pb-6 flex flex-col gap-2">
           <div className="inline-flex items-center gap-1 self-start px-2 py-1 rounded-full bg-[#7b5802]/10 text-[#7b5802]">
@@ -230,7 +230,7 @@ export default function GalleryPage() {
         </section>
 
         {/* ---------- GRILLE ---------- */}
-        <section className="px-4 flex flex-col gap-6">
+        <section className="px-4 grid grid-cols-1 lg:grid-cols-2 gap-6">
           {ITEMS.filter((i) => filter === 'all' || i.category === filter).map((item) => (
             <article
               key={item.id}
@@ -448,7 +448,7 @@ export default function GalleryPage() {
       {toast && (
         <div
           key={toast.key}
-          className="fixed bottom-24 left-1/2 -translate-x-1/2 z-40 toast-in"
+          className="fixed bottom-24 lg:bottom-6 left-1/2 -translate-x-1/2 z-40 toast-in"
         >
           <div className="px-4 py-2 rounded-full bg-[#3a2e21] text-[#ffeedf] jc-label-md shadow-xl flex items-center gap-2">
             <span

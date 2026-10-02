@@ -28,10 +28,10 @@ export default function HomePage({ navigate }) {
   return (
     <div className="bg-[#fff8f4] text-[#241a0e] flex flex-col min-h-screen relative overflow-x-hidden">
       {/* ================= HEADER ================= */}
-      <header className="fixed top-0 w-full z-50 pt-safe bg-[#fff8f4]/90 backdrop-blur-xl border-b border-[#d2c5b2]/30 shadow-[0_1px_10px_rgba(123,88,2,0.06)]">
+      <header className="lg:hidden fixed top-0 w-full z-50 pt-safe bg-[#fff8f4]/90 backdrop-blur-xl border-b border-[#d2c5b2]/30 shadow-[0_1px_10px_rgba(123,88,2,0.06)]">
         <div className="h-16 px-[1.25rem] flex items-center justify-between gap-2">
           <div
-            className="flex items-center gap-2 min-w-0 cursor-pointer"
+            className="flex items-center min-w-0 gap-2 cursor-pointer"
             onClick={() => showToast('Jessy Cakes Events • Brazzaville')}
           >
             <div className="p-0.5 rounded-full bg-gradient-to-tr from-[#c59a45] via-[#ffdea6] to-[#7b5802] shadow-sm">
@@ -67,7 +67,7 @@ export default function HomePage({ navigate }) {
             </button>
             <button
               aria-label="Mon profil"
-              className="w-8 h-8 rounded-full gold-gradient-btn flex items-center justify-center ml-1 active:scale-90 transition-transform shadow-sm text-white"
+              className="flex items-center justify-center w-8 h-8 ml-1 text-white transition-transform rounded-full shadow-sm gold-gradient-btn active:scale-90"
               onClick={() => navigate('/mon-espace')}
             >
               <span className="material-symbols-outlined text-[18px]">person</span>
@@ -77,14 +77,14 @@ export default function HomePage({ navigate }) {
       </header>
 
       {/* ================= MAIN ================= */}
-      <main className="flex-1 flex flex-col relative w-full pt-16 pb-28 bg-[#fff8f4]">
+      <main className="flex-1 flex flex-col relative w-full pt-16 pb-28 lg:pb-12 lg:max-w-6xl lg:mx-auto bg-[#fff8f4]">
         <div className="flex flex-col w-full">
           {/* ---------- HERO ---------- */}
           <section className="relative px-[1.25rem] pt-4 pb-6 flex flex-col items-center text-center">
-            <div className="relative w-full rounded-xl overflow-hidden shadow-xl aspect-[4/3] max-h-[360px] flex flex-col justify-end p-4 border border-[#ffdea6]/40">
+            <div className="relative w-full rounded-xl overflow-hidden shadow-xl aspect-[4/3] max-h-[360px] lg:max-h-[380px] flex flex-col justify-end p-4 lg:p-8 border border-[#ffdea6]/40">
               <img
                 alt="Gâteau de mariage somptueux et champagne Jessy Cakes Events"
-                className="absolute inset-0 w-full h-full object-cover"
+                className="absolute inset-0 object-cover w-full h-full"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkis0-HR_j2MHhWCq01wbRDvzGi3YcIfitsgnQ6AcHSPo9RJpkXHKtntWzk1fE7G2QZGg0vRcgBULbN04DR2VYj9xURk0UJSBHgy94GXYtVXY7EplA8gUrtjZ6SX4iUPlfNqJbs2B7FXRidieovs-OamSjqzYSrAI-qX4ryNtEgHRqexhAtk7_e-iMCZ2UCY4bRg3WVrIsqGzM55uITNt3qGplU_p4wDf8HylXv3x2xlafxrG0LQ"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#3a2e21]/95 via-[#3a2e21]/45 to-transparent"></div>
@@ -96,32 +96,32 @@ export default function HomePage({ navigate }) {
                   >
                     auto_awesome
                   </span>
-                  <span className="jc-label-sm tracking-wider uppercase font-bold text-xs">
+                  <span className="text-xs font-bold tracking-wider uppercase jc-label-sm">
                     Artisans du Bonheur
                   </span>
                 </div>
                 <h1 className="jc-headline-lg-mobile text-[#fff8f4] font-bold leading-tight drop-shadow-md">
-                  Nous rendons vos événements inoubliables 🎉
+                  Nous rendons vos événements inoubliables 
                 </h1>
               </div>
             </div>
-            <p className="jc-body-md text-[#4e4637] mt-4 max-w-xs leading-relaxed">
+            <p className="jc-body-md text-[#4e4637] mt-4 max-w-xs lg:max-w-md leading-relaxed">
               Pâtisseries d'exception &amp; reportages photo/vidéo pour immortaliser vos plus beaux
               moments avec élégance.
             </p>
-            <div className="flex flex-col w-full gap-2 mt-6">
+            <div className="flex flex-col w-full gap-2 mt-6 lg:w-[52%]">
               <button
-                className="w-full min-h-[56px] py-3.5 px-4 rounded-lg gold-gradient-btn text-white shadow-[0_8px_20px_-4px_rgba(197,154,69,0.45)] border border-[#ffdea6]/30 flex items-center justify-between group active:scale-[0.98] transition-transform text-left cursor-pointer"
+                className="w-full lg:min-h-[44px] lg:py-2 px-4 rounded-lg gold-gradient-btn text-white shadow-[0_8px_20px_-4px_rgba(197,154,69,0.45)] border border-[#ffdea6]/30 flex items-center justify-between group active:scale-[0.98] transition-transform text-left cursor-pointer"
                 onClick={() => openModal('booking')}
               >
                 <div className="flex items-center gap-2 text-left">
-                  <div className="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm">
                     <span className="material-symbols-outlined text-[24px] text-white">
                       calendar_month
                     </span>
                   </div>
                   <div className="flex flex-col">
-                    <span className="jc-label-lg font-bold leading-tight text-white">
+                    <span className="font-bold leading-tight text-white jc-label-lg">
                       Réserver un service
                     </span>
                     <span className="jc-body-sm text-white/90">
@@ -134,7 +134,7 @@ export default function HomePage({ navigate }) {
                 </span>
               </button>
               <button
-                className="w-full min-h-[56px] py-3.5 px-4 rounded-lg bg-[#fdeeef] text-[#7c5357] border border-[#ffdadc] shadow-[0_6px_16px_rgba(253,199,203,0.3)] flex items-center justify-between group active:scale-[0.98] transition-transform text-left cursor-pointer hover:bg-[#ffdadc]/30"
+                className="w-full lg:min-h-[44px] lg:py-2 px-4 rounded-lg bg-[#fdeeef] text-[#7c5357] border border-[#ffdadc] shadow-[0_6px_16px_rgba(253,199,203,0.3)] flex items-center justify-between group active:scale-[0.98] transition-transform text-left cursor-pointer hover:bg-[#ffdadc]/30"
                 onClick={() => openModal('cake')}
               >
                 <div className="flex items-center gap-2 text-left">
@@ -161,7 +161,7 @@ export default function HomePage({ navigate }) {
           <section className="px-[1.25rem] py-2">
             <div className="w-full bg-[#fff1e6] rounded-xl p-4 flex justify-between items-center shadow-sm border border-[#d2c5b2]/30">
               <div
-                className="flex flex-col items-center text-center flex-1 px-1 cursor-pointer active:scale-95 transition-transform"
+                className="flex flex-col items-center flex-1 px-1 text-center transition-transform cursor-pointer active:scale-95"
                 onClick={() => showToast('Devis rapide en ligne sans engagement')}
               >
                 <div className="w-8 h-8 rounded-full bg-[#ffdea6] text-[#271900] flex items-center justify-center mb-1 shadow-sm">
@@ -174,7 +174,7 @@ export default function HomePage({ navigate }) {
               </div>
               <div className="w-px h-8 bg-[#d2c5b2]/40"></div>
               <div
-                className="flex flex-col items-center text-center flex-1 px-1 cursor-pointer active:scale-95 transition-transform"
+                className="flex flex-col items-center flex-1 px-1 text-center transition-transform cursor-pointer active:scale-95"
                 onClick={() => showToast('Support client actif 7j/7')}
               >
                 <div className="w-8 h-8 rounded-full bg-[#ffdadc] text-[#301216] flex items-center justify-center mb-1 shadow-sm">
@@ -187,10 +187,10 @@ export default function HomePage({ navigate }) {
               </div>
               <div className="w-px h-8 bg-[#d2c5b2]/40"></div>
               <div
-                className="flex flex-col items-center text-center flex-1 px-1 cursor-pointer active:scale-95 transition-transform"
+                className="flex flex-col items-center flex-1 px-1 text-center transition-transform cursor-pointer active:scale-95"
                 onClick={() => showToast('Note 4.9/5 basée sur +350 avis vérifiés')}
               >
-                <div className="w-8 h-8 rounded-full gold-gradient-btn text-white flex items-center justify-center mb-1 shadow-sm">
+                <div className="flex items-center justify-center w-8 h-8 mb-1 text-white rounded-full shadow-sm gold-gradient-btn">
                   <span
                     className="material-symbols-outlined text-[17px]"
                     style={{ fontVariationSettings: "'FILL' 1" }}
@@ -208,7 +208,7 @@ export default function HomePage({ navigate }) {
 
           {/* ---------- SERVICES ---------- */}
           <section className="px-[1.25rem] py-6 flex flex-col">
-            <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center justify-between mb-4 lg:relative lg:flex-col lg:items-center lg:justify-center lg:text-center">
               <div>
                 <span className="jc-label-sm uppercase tracking-wider text-[#7b5802] font-bold">
                   Notre Atelier
@@ -216,23 +216,23 @@ export default function HomePage({ navigate }) {
                 <h2 className="jc-headline-md text-[#241a0e] font-bold">Nos Deux Savoir-Faire</h2>
               </div>
               <div
-                className="w-9 h-9 rounded-full bg-[#ffdea6]/40 border border-[#ffdea6] flex items-center justify-center text-[#7b5802] cursor-pointer active:rotate-45 transition-transform"
+                className="lg:absolute lg:right-0 lg:top-0 w-9 h-9 rounded-full bg-[#ffdea6]/40 border border-[#ffdea6] flex items-center justify-center text-[#7b5802] cursor-pointer active:rotate-45 transition-transform"
                 onClick={() => showToast('Artisans certifiés Jessy Cakes Events')}
               >
                 <span className="material-symbols-outlined text-[20px]">stars</span>
               </div>
             </div>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:gap-8">
               {/* Carte Photo & Vidéo */}
               <div className="bg-white rounded-xl p-4 shadow-[0_8px_24px_-4px_rgba(123,88,2,0.08)] border border-[#d2c5b2]/20 flex flex-col transition-all duration-300">
-                <div className="relative w-full h-44 rounded-lg overflow-hidden mb-4 border border-[#d2c5b2]/30">
+                <div className="relative w-full h-44 lg:h-52 rounded-lg overflow-hidden mb-4 border border-[#d2c5b2]/30">
                   <img
-                    className="w-full h-full object-cover"
+                    className="object-cover w-full h-full"
                     data-alt="Photographer taking beautiful candid shots at a sunlit outdoor garden wedding"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNCzAr9eu2b6frtmFIIv03w2qsgsmI_AJ-C5185_a3q5J6QF9gcu4nGDYP_GN9RKvZiCUjE05rYtVcOJISz9R6ntMa78QnefqFUt7-EV6re_KGaw6MABeDrxXVQ8csIQxUtIsCw4rSfVaWUmAdJNiIjqUWjn8TIjERFplxO4EkZU50MUSLS0Q5TROpgNPioHexLgLGfCQlbzYAQwB3iilwSHxfcCERfaqtVRZS0ZlquSGAKSKDuA"
                   />
                   <div className="absolute top-1 right-1 bg-[#fff8f4]/95 backdrop-blur-md px-3 py-1 rounded-full shadow-sm text-[#7b5802] border border-[#ffdea6]">
-                    <span className="jc-label-sm font-bold">À partir de 290€</span>
+                    <span className="font-bold jc-label-sm">À partir de 190 000 FCFA</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 mb-1">
@@ -263,7 +263,7 @@ export default function HomePage({ navigate }) {
                   ))}
                 </div>
                 <button
-                  className="w-full py-3.5 rounded-lg bg-[#fae5d1] text-[#241a0e] jc-label-lg flex items-center justify-center gap-1 hover:bg-[#ffdea6]/40 transition-colors cursor-pointer border border-[#d2c5b2]/30"
+                  className="w-full py-3.5 lg:py-2.5 rounded-lg bg-[#fae5d1] text-[#241a0e] jc-label-lg flex items-center justify-center gap-1 hover:bg-[#ffdea6]/40 transition-colors cursor-pointer border border-[#d2c5b2]/30"
                   onClick={() => openModal('booking')}
                 >
                   <span className="font-bold">Réserver ce service</span>
@@ -275,14 +275,14 @@ export default function HomePage({ navigate }) {
 
               {/* Carte Gâteaux */}
               <div className="bg-white rounded-xl p-4 shadow-[0_8px_24px_-4px_rgba(123,88,2,0.08)] border border-[#d2c5b2]/20 flex flex-col transition-all duration-300">
-                <div className="relative w-full h-44 rounded-lg overflow-hidden mb-4 border border-[#d2c5b2]/30">
+                <div className="relative w-full h-44 lg:h-52 rounded-lg overflow-hidden mb-4 border border-[#d2c5b2]/30">
                   <img
-                    className="w-full h-full object-cover"
+                    className="object-cover w-full h-full"
                     data-alt="Artisanal layered celebration cake decorated with pastel edible flowers"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFWDibUP5znqUewSwjshOWbTSuodvVJuVwQ-Gy9i_Y86J2Zq4L2r6mavKNRDRJWbXavh6FMw19HK7J0RXc7RVcB-CO_Y1Vo4vAAwmkWlftTlcIrNWN_18aqBVrewZRab2iaecIbkQxg8x3L4IFYkqs5BO9XUkpjslIFnr4MOFqot9dfI2yCJ-GRJSfsXmgInzFWnXbfog3rHBj2ANO_MrrE27yLJfdCxUfsfj2AMmmjhNltbuzYA"
                   />
                   <div className="absolute top-1 right-1 bg-[#fff8f4]/95 backdrop-blur-md px-3 py-1 rounded-full shadow-sm text-[#7b5802] border border-[#ffdea6]">
-                    <span className="jc-label-sm font-bold">À partir de 45€</span>
+                    <span className="font-bold jc-label-sm">À partir de 30 000 FCFA</span>
                   </div>
                 </div>
                 <div className="flex items-center gap-1 mb-1">
@@ -315,7 +315,7 @@ export default function HomePage({ navigate }) {
                   )}
                 </div>
                 <button
-                  className="w-full py-3.5 rounded-lg gold-gradient-btn text-white jc-label-lg flex items-center justify-center gap-1 shadow-md border border-[#ffdea6]/30 active:scale-[0.98] transition-transform cursor-pointer"
+                  className="w-full py-3.5 lg:py-2.5 rounded-lg gold-gradient-btn text-white jc-label-lg flex items-center justify-center gap-1 shadow-md border border-[#ffdea6]/30 active:scale-[0.98] transition-transform cursor-pointer"
                   onClick={() => openModal('cake')}
                 >
                   <span className="font-bold">Créer mon gâteau</span>
@@ -416,19 +416,19 @@ export default function HomePage({ navigate }) {
               <span className="material-symbols-outlined text-[26px]">favorite</span>
             </div>
             <h2 className="jc-headline-md text-[#241a0e] font-bold">Un projet particulier ?</h2>
-            <p className="jc-body-md text-[#4e4637] mt-1 max-w-xs mb-6">
+            <p className="jc-body-md text-[#4e4637] mt-1 max-w-xs lg:max-w-md mb-6">
               Discutons de vos envies en direct avec notre cheffe pâtissière et nos photographes.
             </p>
-            <div className="flex flex-col w-full gap-2">
+            <div className="flex flex-col w-full gap-2 lg:max-w-md">
               <button
-                className="w-full min-h-[52px] py-3.5 px-4 rounded-lg bg-[#fae5d1] text-[#241a0e] jc-label-lg flex items-center justify-center gap-1 active:bg-[#f4dfcc] transition-colors shadow-sm cursor-pointer border border-[#d2c5b2]/30 font-bold"
+                className="w-full min-h-[52px] lg:min-h-[44px] py-3.5 lg:py-2.5 px-4 rounded-lg bg-[#fae5d1] text-[#241a0e] jc-label-lg flex items-center justify-center gap-1 active:bg-[#f4dfcc] transition-colors shadow-sm cursor-pointer border border-[#d2c5b2]/30 font-bold"
                 onClick={() => openModal('call')}
               >
                 <span className="material-symbols-outlined text-[20px] text-[#7b5802]">call</span>
                 <span>Nous appeler au 06 949 95 12</span>
               </button>
               <button
-                className="w-full min-h-[52px] py-3.5 px-4 rounded-lg gold-gradient-btn text-white jc-label-lg flex items-center justify-center gap-1 active:scale-[0.98] transition-transform shadow-md cursor-pointer border border-[#ffdea6]/30 font-bold"
+                className="w-full min-h-[52px] lg:min-h-[44px] py-3.5 lg:py-2.5 px-4 rounded-lg gold-gradient-btn text-white jc-label-lg flex items-center justify-center gap-1 active:scale-[0.98] transition-transform shadow-md cursor-pointer border border-[#ffdea6]/30 font-bold"
                 onClick={() => openModal('whatsapp')}
               >
                 <span className="material-symbols-outlined text-[20px]">chat</span>
@@ -440,13 +440,13 @@ export default function HomePage({ navigate }) {
       </main>
 
       {/* ---------- FAB "Besoin d'aide ?" ---------- */}
-      <aside className="fixed bottom-24 right-[1.25rem] z-40">
+      <aside className="fixed bottom-24 lg:bottom-6 right-[1.25rem] z-40">
         <button
           className="inline-flex items-center gap-1 px-4 py-2.5 rounded-full gold-gradient-btn text-white shadow-[0_8px_20px_-4px_rgba(123,88,2,0.35)] border border-[#ffdea6]/40 transition-all active:scale-95 cursor-pointer font-bold"
           onClick={() => openModal('whatsapp')}
         >
           <span className="material-symbols-outlined text-[20px]">support_agent</span>
-          <span className="jc-label-md tracking-wide">Besoin d'aide ?</span>
+          <span className="tracking-wide jc-label-md">Besoin d'aide ?</span>
         </button>
       </aside>
 
@@ -509,7 +509,7 @@ function BookingModal({ service, setService, onClose, onSubmit }) {
     onSubmit()
   }
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm sm:items-center">
       <div className="bg-[#fff8f4] w-full max-w-lg rounded-t-2xl sm:rounded-2xl max-h-[90vh] overflow-y-auto p-4 shadow-2xl flex flex-col border-t sm:border border-[#ffdea6]">
         <div className="flex items-center justify-between pb-3 border-b border-[#d2c5b2]/30">
           <div className="flex items-center gap-2">
@@ -525,7 +525,7 @@ function BookingModal({ service, setService, onClose, onSubmit }) {
             <span className="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
-        <form className="mt-4 flex flex-col gap-3" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-3 mt-4" onSubmit={handleSubmit}>
           <div>
             <label className="block jc-label-sm text-[#4e4637] mb-1 font-semibold">
               Prestation désirée
@@ -586,7 +586,7 @@ function BookingModal({ service, setService, onClose, onSubmit }) {
               rows="2"
             />
           </div>
-          <div className="mt-2 flex gap-2">
+          <div className="flex gap-2 mt-2">
             <button
               className="flex-1 py-3 rounded-lg bg-[#fae5d1] text-[#241a0e] jc-label-md font-semibold"
               onClick={onClose}
@@ -595,7 +595,7 @@ function BookingModal({ service, setService, onClose, onSubmit }) {
               Annuler
             </button>
             <button
-              className="flex-1 py-3 rounded-lg gold-gradient-btn text-white jc-label-md font-bold shadow-md"
+              className="flex-1 py-3 font-bold text-white rounded-lg shadow-md gold-gradient-btn jc-label-md"
               type="submit"
             >
               Confirmer ma demande
@@ -615,7 +615,7 @@ function CakeModal({ cakeType, setCakeType, onClose, onSubmit }) {
     onSubmit(flavor, parts)
   }
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm sm:items-center">
       <div className="bg-[#fff8f4] w-full max-w-lg rounded-t-2xl sm:rounded-2xl max-h-[90vh] overflow-y-auto p-4 shadow-2xl flex flex-col border-t sm:border border-[#ffdea6]">
         <div className="flex items-center justify-between pb-3 border-b border-[#d2c5b2]/30">
           <div className="flex items-center gap-2">
@@ -631,7 +631,7 @@ function CakeModal({ cakeType, setCakeType, onClose, onSubmit }) {
             <span className="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
-        <form className="mt-4 flex flex-col gap-3" onSubmit={handleSubmit}>
+        <form className="flex flex-col gap-3 mt-4" onSubmit={handleSubmit}>
           <div>
             <label className="block jc-label-sm text-[#4e4637] mb-1 font-semibold">
               Type de gâteau
@@ -701,7 +701,7 @@ function CakeModal({ cakeType, setCakeType, onClose, onSubmit }) {
               <div className="w-9 h-5 bg-[#d2c5b2] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#c59a45]"></div>
             </label>
           </div>
-          <div className="mt-2 flex gap-2">
+          <div className="flex gap-2 mt-2">
             <button
               className="flex-1 py-3 rounded-lg bg-[#fae5d1] text-[#241a0e] jc-label-md font-semibold"
               onClick={onClose}
@@ -710,7 +710,7 @@ function CakeModal({ cakeType, setCakeType, onClose, onSubmit }) {
               Fermer
             </button>
             <button
-              className="flex-1 py-3 rounded-lg gold-gradient-btn text-white jc-label-md font-bold shadow-md"
+              className="flex-1 py-3 font-bold text-white rounded-lg shadow-md gold-gradient-btn jc-label-md"
               type="submit"
             >
               Ajouter &amp; Deviser
@@ -724,14 +724,14 @@ function CakeModal({ cakeType, setCakeType, onClose, onSubmit }) {
 
 function WhatsAppModal({ onClose }) {
   return (
-    <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm sm:items-center" onClick={onClose}>
       <div
         className="bg-[#fff8f4] w-full max-w-sm rounded-t-2xl sm:rounded-2xl p-4 shadow-2xl flex flex-col border-t sm:border border-[#ffdea6]"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between pb-3 border-b border-[#d2c5b2]/30">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full gold-gradient-btn text-white flex items-center justify-center shadow-sm">
+            <div className="flex items-center justify-center w-8 h-8 text-white rounded-full shadow-sm gold-gradient-btn">
               <span className="material-symbols-outlined text-[18px]">chat</span>
             </div>
             <div>
@@ -751,7 +751,7 @@ function WhatsAppModal({ onClose }) {
             <span className="material-symbols-outlined text-[18px]">close</span>
           </button>
         </div>
-        <div className="py-3 flex flex-col gap-2">
+        <div className="flex flex-col gap-2 py-3">
           <p className="jc-body-md text-[#4e4637]">
             Échangez directement avec notre équipe pour un devis instantané ou une question :
           </p>
@@ -791,7 +791,7 @@ function WhatsAppModal({ onClose }) {
 function CallModal({ onClose }) {
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-end sm:items-center justify-center"
+      className="fixed inset-0 z-50 flex items-end justify-center bg-black/60 backdrop-blur-sm sm:items-center"
       onClick={onClose}
     >
       <div

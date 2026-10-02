@@ -192,12 +192,148 @@
   }
 }
 
+/* ===== Desktop (≥1024px) : typographie des tokens adaptée ===== */
+@media (min-width: 1024px) {
+  .jc-headline-sm {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .jc-headline-md {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .jc-headline-lg-mobile {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  .jc-label-sm {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .jc-label-lg {
+    font-size: 15px;
+    line-height: 21px;
+  }
+  .jc-body-md {
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .fd-headline-sm {
+    font-size: 21px;
+    line-height: 29px;
+  }
+  .fd-headline-md {
+    font-size: 25px;
+    line-height: 33px;
+  }
+  .fd-headline-lg-mobile {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .fd-display-lg-mobile {
+    font-size: 38px;
+    line-height: 46px;
+  }
+  .fd-label-lg {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  .fd-body-md {
+    font-size: 16px;
+    line-height: 25px;
+  }
+}
+
 @layer utilities {
   .pb-safe {
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   .pt-safe {
     padding-top: env(safe-area-inset-top, 0px);
+  }
+
+  /* ===== Desktop (≥1024px) : respiration entre les éléments =====
+     Placé en fin de couche utilities pour primer sur les classes
+     Tailwind, et uniquement sur ≥1024px (mobile strictement inchangé). */
+  @media (min-width: 1024px) {
+    .gap-1 {
+      gap: 0.25rem;
+    }
+    .gap-1\.5 {
+      gap: 0.625rem;
+    }
+    .gap-2 {
+      gap: 0.75rem;
+    }
+    .gap-2\.5 {
+      gap: 0.875rem;
+    }
+    .gap-3 {
+      gap: 1.125rem;
+    }
+    .gap-4 {
+      gap: 1.5rem;
+    }
+    .gap-5 {
+      gap: 1.75rem;
+    }
+    .gap-6 {
+      gap: 2rem;
+    }
+    .gap-8 {
+      gap: 2.5rem;
+    }
+    .gap-10 {
+      gap: 3rem;
+    }
+    .py-2 {
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    .py-3 {
+      padding-top: 0.875rem;
+      padding-bottom: 0.875rem;
+    }
+    .py-4 {
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+    .py-6 {
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    .py-8 {
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+    }
+    .py-10 {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+    .pt-6 {
+      padding-top: 1.75rem;
+    }
+    .pb-6 {
+      padding-bottom: 1.75rem;
+    }
+    .pb-10 {
+      padding-bottom: 3rem;
+    }
+    .p-3 {
+      padding: 0.875rem;
+    }
+    .p-4 {
+      padding: 1.25rem;
+    }
+    .p-5 {
+      padding: 1.5rem;
+    }
+    .space-y-2 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 0.75rem;
+    }
+    .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+      margin-top: 1.125rem;
+    }
   }
 }
 

@@ -27,9 +27,9 @@ export default function AccountPage() {
   }
 
   return (
-    <div className="min-h-screen pb-28 max-w-md mx-auto relative shadow-2xl bg-[#FFFDF9] text-[#2B1E16]">
+    <div className="min-h-screen pb-28 lg:pb-12 lg:pt-16 max-w-md mx-auto relative shadow-2xl bg-[#FFFDF9] text-[#2B1E16]">
       {/* ================= HEADER ================= */}
-      <header className="sticky top-0 z-40 bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#EEDDC8]/60 px-4 py-3 flex items-center justify-between shadow-sm">
+      <header className="lg:hidden sticky top-0 z-40 bg-[#FFFDF9]/95 backdrop-blur-md border-b border-[#EEDDC8]/60 px-4 py-3 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-2.5">
           <img
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8EXuKwcJADksV9Z8izM-57VTeJ91jwq7NnkgMcLxP2o-hTdSaUb1OzNbHogZr1Ux_OnwQX-IdnZBkGNX34IcGhCSTuy-mcZFlzZ-caep5Mcd6KiWS1C2zgMwZhl1YM1Wx3Q0F0uGhVTbzGcz0v4Kq5VekfO-XOxAWXlZ9IQ41XmSVhca2Zs2icg-LrxUe5iKVU2fmREE0VuZH9orsDeHnyWPAbHvWwMBrl7f5lfkDIAwU8j6eMiirmTMyFRsrTFc"
@@ -768,7 +768,7 @@ export default function AccountPage() {
 
       {/* ASSISTANCE FLOTTANTE */}
       <a
-        className="fixed bottom-20 right-4 z-40 bg-[#25D366] text-white px-3.5 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 active:scale-95 transition"
+        className="fixed bottom-20 lg:bottom-6 right-4 z-40 bg-[#25D366] text-white px-3.5 py-2.5 rounded-full shadow-lg flex items-center gap-2 hover:scale-105 active:scale-95 transition"
         href="https://wa.me/242069499512?text=Bonjour%20Jessy%20Cakes%20Events,%20besoin%20d'assistance"
         target="_blank"
         rel="noopener"
