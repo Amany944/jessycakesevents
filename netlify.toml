@@ -1,0 +1,16 @@
+[build]
+  base = "jessycakesevents"
+  command = "npm run build"
+  publish = "jessycakesevents/dist"
+
+# SPA : toutes les routes renvoient l'index (l'app utilise le hash routing,
+# cette règle garantit le bon chargement même en navigation directe)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
